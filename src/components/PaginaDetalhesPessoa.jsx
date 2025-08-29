@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // useParams para pegar o ID da URL
-import ImagemComFallback from './ImagemComFallback'; // 1. Importe o novo componente
+import { useParams, Link } from 'react-router-dom'; 
+import ImagemComFallback from './ImagemComFallback'; 
+import FormularioAtualizacao from './FormularioAtualizacao';
+
 
 export default function PaginaDetalhesPessoa() {
   const { id } = useParams();
@@ -76,13 +78,6 @@ export default function PaginaDetalhesPessoa() {
         <Link to="/" className="text-gold hover:underline mb-8 inline-block">&larr; Voltar para a lista</Link>
         
         <div className="bg-gray-950 p-6 rounded-xl shadow-lg md:flex md:gap-8">
-          {/* <div className="md:w-1/3 text-center">
-            <img 
-              src={pessoa.urlFoto} 
-              alt={pessoa.nome} 
-              className="w-full h-auto object-cover rounded-lg mb-4 mx-auto" 
-            />
-          </div> */}
           <div className="md:w-1/3 text-center">
             <ImagemComFallback
               src={pessoa.urlFoto}
@@ -127,6 +122,10 @@ export default function PaginaDetalhesPessoa() {
             </div>
           </div>
         </div>
+        <FormularioAtualizacao 
+          pessoaId={pessoa.id} 
+          ocorrenciaId={pessoa.ultimaOcorrencia?.ocoId}
+        />
       </div>
     </div>
   );

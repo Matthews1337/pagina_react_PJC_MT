@@ -1,7 +1,7 @@
 import React from "react";
 import semPerfil from "../assets/sem_perfil.jpg";
 import { Link } from 'react-router-dom';
-import { useState } from 'react'; // Importe useState
+import { useState } from 'react'; 
 import ImagemComFallback from './ImagemComFallback';
 
 

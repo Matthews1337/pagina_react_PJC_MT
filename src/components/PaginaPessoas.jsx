@@ -3,20 +3,24 @@ import { obterPessoas } from "../service/consultaPessoasService";
 import Paginacao from "../components/Paginacao";
 import BarraDeBusca from "../components/BarraDeBusca";
 import CardPessoa from "../components/CardPessoa";
+import { useSearchParams } from 'react-router-dom';
 
 
 export default function PaginaPessoas() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const paginaUrl = parseInt(searchParams.get('page') || '1', 10);
+  const nomeUrl = searchParams.get('nome') || "";
+
+  const paginaApi = paginaUrl - 1;
   const [pessoas, setPessoas] = useState([]);
-  const [pagina, setPagina] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [nome, setNome] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
       try {
-        const data = await obterPessoas(pagina, 12, nome); 
+        const data = await obterPessoas(paginaApi, 12, nomeUrl); 
         setPessoas(data.content);
         setTotalPages(data.totalPages);
       } catch (err) {
@@ -25,17 +29,28 @@ export default function PaginaPessoas() {
       setLoading(false);
     }
     fetchData();
-  }, [pagina, nome]);
+  }, [paginaApi, nomeUrl]); 
+
+ 
+  const handleSearch = (termo) => {
+    setSearchParams({ nome: termo, page: '1' });
+  };
+
+  const handlePageChange = (novaPaginaApi) => {
+    const novaPaginaUrl = novaPaginaApi + 1; 
+    
+    setSearchParams(prevParams => {
+      prevParams.set('page', novaPaginaUrl.toString());
+      return prevParams;
+    });
+  };
 
   return (
     <div className="p-8 bg-gray-800 min-h-screen">
       <h1 className="text-3xl font-bold text-gold/90 mb-6 text-center">
         Lista de Pessoas Desaparecidas
       </h1>
-      <BarraDeBusca onSearch={(termo) => { 
-        setNome(termo); 
-        setPagina(0); 
-      }} />
+      <BarraDeBusca onSearch={handleSearch} />
 
       {loading ? (
         <p className="text-center text-gray-600">Carregando...</p>
@@ -54,10 +69,13 @@ export default function PaginaPessoas() {
           )}
         </>
       )}
-
       
       <div className="mt-8">
-        <Paginacao page={pagina} totalPages={totalPages} onPageChange={setPagina} />
+        <Paginacao 
+          page={paginaApi}
+          totalPages={totalPages} 
+          onPageChange={handlePageChange} 
+        />
       </div>
     </div>
   );

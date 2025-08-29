@@ -1,10 +1,5 @@
 import api from "./api";
 
-// export async function obterPessoas(){
-//     let url = "https://abitus-api.geia.vip/v1/pessoas/aberto/dinamico?registros=10";
-//     const resposta = await api.get(url);
-//     return resposta.data;
-// }
 
 export async function obterPessoas(pagina = 0, porPagina = 10, nome = "") {
   let url = `https://abitus-api.geia.vip/v1/pessoas/aberto/filtro?pagina=${pagina}&porPagina=${porPagina}`;

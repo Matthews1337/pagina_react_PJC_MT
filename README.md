@@ -58,7 +58,7 @@ As principais dependências estão descritas no arquivo [`package.json`](./packa
    ```
 2. Navegue até a pasta do projeto:
    ```bash
-   cd <nome-do-projeto>
+   cd pagina_react_PJC_MT
    ```
 3. Instale as dependências:
    ```bash

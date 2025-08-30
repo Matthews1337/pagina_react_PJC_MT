@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 
 const PaginaPessoas = lazy(() => import('./components/PaginaPessoas'));
 const PaginaDetalhesPessoa = lazy(() => import('./components/PaginaDetalhesPessoa'));
+import Footer from './components/Footer';
 
 
 const LoadingFallback = () => (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/pessoa/:id" element={<PaginaDetalhesPessoa />} />
         </Routes>
       </Suspense>
+      <Footer />
     </BrowserRouter>
   );
 }

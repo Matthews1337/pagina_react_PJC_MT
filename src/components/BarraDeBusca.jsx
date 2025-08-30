@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 export default function BarraDeBusca({ onSearch }) {
   const [termo, setTermo] = useState("");
 

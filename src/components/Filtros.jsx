@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// Recebe os valores iniciais da URL e uma função para ser chamada ao aplicar os filtros
 export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
   const [nome, setNome] = useState(valoresIniciais.nome || '');
   const [idadeMin, setIdadeMin] = useState(valoresIniciais.idadeInicial || '');
@@ -8,7 +7,6 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Chama a função do componente pai com todos os valores atuais dos filtros
     onAplicarFiltros({
       nome,
       idadeInicial: idadeMin,
@@ -18,7 +16,7 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-900 p-4 rounded-lg mb-8 flex flex-wrap items-end gap-4">
-      {/* Filtro por Nome */}
+      
       <div className="flex-grow">
         <label htmlFor="nome" className="block text-sm font-medium text-gray-400 mb-1">Nome</label>
         <input
@@ -31,7 +29,6 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
         />
       </div>
 
-      {/* Filtro por Idade Mínima */}
       <div className="flex-grow sm:flex-grow-0">
         <label htmlFor="idadeMin" className="block text-sm font-medium text-gray-400 mb-1">Idade Mín.</label>
         <input
@@ -45,7 +42,6 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
         />
       </div>
 
-      {/* Filtro por Idade Máxima */}
       <div className="flex-grow sm:flex-grow-0">
         <label htmlFor="idadeMax" className="block text-sm font-medium text-gray-400 mb-1">Idade Máx.</label>
         <input
@@ -59,7 +55,7 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
         />
       </div>
       
-      {/* Botão de Aplicar */}
+      
       <button type="submit" className="bg-gold px-5 py-2 rounded-md text-white font-medium hover:bg-gold/90 transition h-10">
         Aplicar Filtros
       </button>

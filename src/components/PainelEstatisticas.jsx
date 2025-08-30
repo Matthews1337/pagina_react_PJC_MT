@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { obterEstatisticas } from "../service/consultaPessoasService"; // Ajuste o caminho para sua função da API
+import { obterEstatisticas } from "../service/consultaPessoasService"; 
 
 export default function PainelEstatisticas() {
 

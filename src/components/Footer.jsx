@@ -27,7 +27,6 @@ export default function Footer() {
           <FaGithub size={24} /> 
           <span>GitHub</span>
         </a>
-
       </div>
     </footer>
   );

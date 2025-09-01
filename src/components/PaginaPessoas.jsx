@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { obterPessoas } from "../service/consultaPessoasService";
+import { obterPessoas } from "../service/ConsultaPessoasService";
 import Paginacao from "../components/Paginacao";
-import BarraDeBusca from "../components/BarraDeBusca";
+// import BarraDeBusca from "../components/BarraDeBusca";
 import CardPessoa from "../components/CardPessoa";
 import { useSearchParams } from 'react-router-dom';
 import PainelEstatisticas from '../components/PainelEstatisticas';

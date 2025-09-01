@@ -75,7 +75,7 @@ export default function PaginaDetalhesPessoa() {
   return (
     <div className="bg-gray-900 text-white min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
-        <Link to="/" className="text-gold hover:underline mb-8 inline-block">&larr; Voltar para a lista</Link>
+        <Link to="/lista_pessoas" className="text-gold hover:underline mb-8 inline-block">&larr; Voltar para a lista</Link>
         
         <div className="bg-gray-950 p-6 rounded-xl shadow-lg md:flex md:gap-8">
           <div className="md:w-1/3 text-center">

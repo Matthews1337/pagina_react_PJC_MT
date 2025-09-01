@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  react-app:
+    build: .
+    container_name: site_pjcmt
+    ports:
+      - "8080:80"
+    restart: unless-stopped

@@ -19,7 +19,7 @@ A aplicação foi construída com foco em performance, componentização e uma e
 
 ### 📦 Dependências do Projeto
 
-O projeto utiliza **Node.js** e **npm** como gerenciador de pacotes.
+O projeto utiliza **Node.js**, **Vite**, **React**, **Tailwind CSS** e **npm** como gerenciador de pacotes.
 As principais dependências estão descritas no arquivo [`package.json`](./package.json).
 
 ### Dependências de Produção
@@ -58,14 +58,14 @@ As principais dependências estão descritas no arquivo [`package.json`](./packa
    ```
 2. Navegue até a pasta do projeto:
    ```bash
-   cd <nome-do-projeto>
+   cd pagina_react_PJC_MT
    ```
 3. Instale as dependências:
    ```bash
    npm install
    ```
 
-### 💻 Rode o código
+### 💻 Rode o código (sem Docker)
 
 ```bash
 npm run dev
@@ -78,3 +78,40 @@ npm run build
 ```
 
 Após executar o comando será gerado a pasta "dist" com o código compilado!
+
+
+## ▶️ Rodando com Docker
+
+Para simplificar a execução em ambiente de produção, este projeto pode ser rodado dentro de um container Docker.
+
+### Pré-requisitos
+
+- [Docker](https://docs.docker.com/get-docker/) instalado  
+- (Opcional) [Docker Compose](https://docs.docker.com/compose/)
+
+### 🔨 Build da imagem
+
+Na raiz do projeto, execute:
+
+```bash
+docker build -t site_pjcmt .
+```
+
+## Rodando o container
+
+```bash
+docker run -d -p 8080:80 site_pjcmt .
+```
+
+### (Opcional) Rodando com Docker Compose
+_Caso possua Docker Compose, os passos de "build" e "run" acima não serão necessários, bastando executar o comando:_
+```bash
+docker-compose up --build -d
+
+```
+
+#### Agora a aplicação estará disponível em:
+
+```bash
+http://localhost:8080
+```

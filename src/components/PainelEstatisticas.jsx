@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { obterEstatisticas } from "../service/consultaPessoasService"; 
+import { obterEstatisticas } from "../service/ConsultaPessoasService"; 
 
 export default function PainelEstatisticas() {
 

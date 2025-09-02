@@ -70,6 +70,7 @@ As principais dependências estão descritas no arquivo [`package.json`](./packa
 ```bash
 npx vite
 ```
+### OU
 
 Para compilar o código(versão de produção), execute:
 

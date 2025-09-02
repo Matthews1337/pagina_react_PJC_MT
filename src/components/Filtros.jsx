@@ -15,7 +15,7 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-900 p-4 rounded-lg mb-8 flex flex-wrap items-end gap-4">
+    <form onSubmit={handleSubmit} className="bg-gray-950 border-gold p-4 rounded-lg mb-8 flex flex-wrap items-end gap-4">
       
       <div className="flex-grow">
         <label htmlFor="nome" className="block text-sm font-medium text-gray-400 mb-1">Nome</label>
@@ -25,7 +25,8 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
           placeholder="Procurar por nome..."
           value={nome}
           onChange={(e) => setNome(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:ring-gold focus:border-gold"
+          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:outline-none focus:ring-gold focus:border-gold"
+          
         />
       </div>
 
@@ -38,7 +39,7 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
           min="0"
           value={idadeMin}
           onChange={(e) => setIdadeMin(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:ring-gold focus:border-gold"
+          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:outline-none focus:ring-gold focus:border-gold"
         />
       </div>
 
@@ -51,7 +52,7 @@ export default function Filtros({ valoresIniciais, onAplicarFiltros }) {
           min="0"
           value={idadeMax}
           onChange={(e) => setIdadeMax(e.target.value)}
-          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:ring-gold focus:border-gold"
+          className="w-full bg-gray-800 border border-gray-600 rounded-md p-2 text-white focus:outline-none focus:ring-gold focus:border-gold"
         />
       </div>
       

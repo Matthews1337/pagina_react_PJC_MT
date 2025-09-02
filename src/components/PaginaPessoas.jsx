@@ -72,7 +72,7 @@ export default function PaginaPessoas() {
   };
 
   return (
-    <div className="p-8 bg-gray-800 min-h-screen">
+    <div className="p-8 bg-black min-h-screen">
       <h1 className="text-3xl font-bold text-gold/90 mb-6 text-center">
         Polícia Judiciária Civil de Mato Grosso
       </h1>

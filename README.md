@@ -115,3 +115,10 @@ docker-compose up --build -d
 ```bash
 http://localhost:8080
 ```
+
+## Testes
+
+#### Para executar os testes, execute o comando:
+```bash
+npm test
+```

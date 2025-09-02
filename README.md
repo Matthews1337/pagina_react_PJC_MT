@@ -116,9 +116,3 @@ docker-compose up --build -d
 http://localhost:8080/lista_pessoas?page=1
 ```
 
-## Testes
-
-#### Para executar os testes, execute o comando:
-```bash
-npm test
-```

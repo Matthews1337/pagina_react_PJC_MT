@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ImagemComFallback from './ImagemComFallback';
 
 
-export default function CardPessoa({ pessoa }) {
+export default function CardPessoa({ pessoa, location }) {
   const { dataLocalizacao, encontradoVivo } = pessoa.ultimaOcorrencia || {};
   const isEncontrado = (encontradoVivo === true) || (encontradoVivo === false && dataLocalizacao != null);
 
@@ -13,7 +13,7 @@ export default function CardPessoa({ pessoa }) {
   const statusCor = isEncontrado ? 'bg-green-600' : 'bg-red-600';
 
   return (
-    <Link to={`/pessoa/${pessoa.id}`} className="block">
+    <Link to={`/pessoa/${pessoa.id}`} state={{ from: location }} className="block">
       {/* <div className="bg-black  p-6 rounded-xl shadow-md h-full hover:shadow-xl hover:border hover:border-gold transition"> */}
       <div className="bg-black p-6 rounded-xl shadow-md h-full border border-gray-500 hover:border-gold transition">
         <div className="relative mb-4">

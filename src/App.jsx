@@ -17,6 +17,7 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
+          <Route path="/" element={<PaginaPessoas />} />
           <Route path="/lista_pessoas" element={<PaginaPessoas />} />
           <Route path="/pessoa/:id" element={<PaginaDetalhesPessoa />} />
         </Routes>

@@ -14,7 +14,8 @@ export default function CardPessoa({ pessoa }) {
 
   return (
     <Link to={`/pessoa/${pessoa.id}`} className="block">
-      <div className="bg-gray-950 p-6 rounded-xl shadow-md h-full hover:shadow-xl hover:border hover:border-gold transition">
+      {/* <div className="bg-black  p-6 rounded-xl shadow-md h-full hover:shadow-xl hover:border hover:border-gold transition"> */}
+      <div className="bg-black p-6 rounded-xl shadow-md h-full border border-gray-500 hover:border-gold transition">
         <div className="relative mb-4">
           <span className={`absolute top-2 left-2 px-2 py-1 text-xs font-bold text-white rounded ${statusCor} z-10`}>
             {statusTexto}

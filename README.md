@@ -68,16 +68,25 @@ As principais dependências estão descritas no arquivo [`package.json`](./packa
 ### 💻 Rode o código (sem Docker)
 
 ```bash
-npm run dev
+npx vite
 ```
 
-Para compilar o código, execute:
+Para compilar o código(versão de produção), execute:
 
 ```bash
 npm run build
 ```
-
-Após executar o comando será gerado a pasta "dist" com o código compilado!
+Esse comando cria a pasta "dist" na raiz do projeto. Dentro dela estarão os arquivos finais do site.
+Será necessário um servidor web para visualizar a versão compilada!
+Pode-se instalar o "serve" através do comando:
+```bash
+npm install -g serve
+```
+e na raiz do projeto
+```bash
+serve -s dist
+```
+O terminal irá mostrar um endereço de IP para acessar!
 
 
 ## ▶️ Rodando com Docker

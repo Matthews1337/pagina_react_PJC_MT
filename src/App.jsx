@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 
 const PaginaPessoas = lazy(() => import('./components/PaginaPessoas'));
 const PaginaDetalhesPessoa = lazy(() => import('./components/PaginaDetalhesPessoa'));
+const PaginaNaoEncontrada = lazy(() => import('./components/PaginaNaoEncontrada'));
 import Footer from './components/Footer';
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<PaginaPessoas />} />
           <Route path="/lista_pessoas" element={<PaginaPessoas />} />
           <Route path="/pessoa/:id" element={<PaginaDetalhesPessoa />} />
+          <Route path="*" element={<PaginaNaoEncontrada />} />
         </Routes>
       </Suspense>
       <Footer />

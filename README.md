@@ -113,7 +113,7 @@ docker-compose up --build -d
 #### Agora a aplicação estará disponível em:
 
 ```bash
-http://localhost:8080
+http://localhost:8080/lista_pessoas?page=1
 ```
 
 ## Testes

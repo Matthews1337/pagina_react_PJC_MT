@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { obterPessoas } from "../service/ConsultaPessoasService";
 import Paginacao from "../components/Paginacao";
-// import BarraDeBusca from "../components/BarraDeBusca";
 import CardPessoa from "../components/CardPessoa";
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import PainelEstatisticas from '../components/PainelEstatisticas';
 import fotoPJCMT from "../assets/BRASAO_PJCMT_2.png";
 import Filtros from '../components/Filtros';
@@ -22,6 +21,7 @@ export default function PaginaPessoas() {
   const [pessoas, setPessoas] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+  const location = useLocation(); // location contém a URL atual, incluindo /lista_pessoas?nome=...
 
   useEffect(() => {
     async function fetchData() {
@@ -76,7 +76,9 @@ export default function PaginaPessoas() {
       <h1 className="text-3xl font-bold text-gold/90 mb-6 text-center">
         Polícia Judiciária Civil de Mato Grosso
       </h1>
-      <img src={fotoPJCMT} alt="Brasão PJCMT" className="mx-auto mb-6" width="100" height="100" />
+      <a href="/" className="block w-fit mx-auto mb-6 ">
+        <img src={fotoPJCMT} alt="Brasão PJCMT" className="mx-auto mb-6 " width="100" height="100" />
+      </a>
       <PainelEstatisticas />
 
       
@@ -96,7 +98,7 @@ export default function PaginaPessoas() {
           {pessoas.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {pessoas.map((pessoa) => (
-                <CardPessoa key={pessoa.id} pessoa={pessoa} />
+                <CardPessoa key={pessoa.id} pessoa={pessoa} location={location} />
               ))}
             </div>
           ) : (

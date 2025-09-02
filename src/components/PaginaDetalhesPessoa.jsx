@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; 
+import { useParams, Link, useLocation } from 'react-router-dom'; 
 import ImagemComFallback from './ImagemComFallback'; 
 import FormularioAtualizacao from './FormularioAtualizacao';
 
@@ -9,6 +9,8 @@ export default function PaginaDetalhesPessoa() {
   const [pessoa, setPessoa] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const from = location.state?.from?.pathname + location.state?.from?.search || "/lista_pessoas";
 
   useEffect(() => {
     const fetchPessoa = async () => {
@@ -75,7 +77,10 @@ export default function PaginaDetalhesPessoa() {
   return (
     <div className="bg-black text-white min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
-        <Link to="/lista_pessoas" className="text-gold hover:underline mb-8 inline-block">&larr; Voltar para a lista</Link>
+        {/* <Link to="/lista_pessoas" className="text-gold hover:underline mb-8 inline-block">&larr; Voltar para a lista</Link> */}
+        <Link to={from} className="text-gold hover:underline mb-8 inline-block">
+          &larr; Voltar para a lista
+        </Link>
         
         <div className="bg-gray-950 p-6 rounded-xl shadow-lg md:flex md:gap-8">
           <div className="md:w-1/3 text-center">

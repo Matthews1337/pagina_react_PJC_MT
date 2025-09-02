@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   react-dev:
-    image: node:18
+    image: node:20
     working_dir: /app
     volumes:
       - .:/app
